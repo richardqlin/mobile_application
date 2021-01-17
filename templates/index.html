@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+{% extends "base.html" %}
+
+
+{% block title %}This is an example page{% endblock %}
+{% block content %}
+
+
+
+<br>
+
+<br>
+<br>
+
+<div class ="container-sm border text-center" >
+
+
+{% for entry in entries %}
+<div class ="container-sm border text-center" >
+<h1>Title: {{ entry.title }}</h1>
+
+<h2>Post: {{ entry.post}}</h2>
+    <h2>Time: {{ entry.time }} </h2>
+
+    <h2>Date: {{entry.date }}</h2>
+
+
+<h2><a href="/remove/{{entry['_id'] }}"> <button class="btn-danger">delete</button></a></h2>
+</div>
+<br>
+{% else %}
+<h2>no data</h2>
+
+{% endfor %}
+
+
+
+</div>
+
+<br>
+
+
+{% endblock %}
+
+</html>
